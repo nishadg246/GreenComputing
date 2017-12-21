@@ -1,0 +1,71 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+	\noindent{\bf #1: #2} \vspace{0.5em}
+	\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Nishad Gothoskar}
+\newcommand{\myandrew}{ngothosk}
+\newcommand{\myhwnum}{2}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{Green Computing}}
+
+\begin{document}
+	
+	\medskip                        % Skip a "medium" amount of space
+	% (latex determines what medium is)
+	% Also try: \bigskip, \littleskip
+	
+	\thispagestyle{plain}
+	\begin{center}                  % Center the following lines
+		{\Large From Buildings to Smart Buildings – Sensing and
+Actuation to Improve Energy Efficiency
+} \\
+		\myname \\
+		\myandrew @andrew.cmu.edu\\
+	\end{center}
+	
+	\question{1}{Summary}
+	\quad This paper provides a survey of the components and elements of a "smart building" setup while at the same time exposing us to new concepts of actuation and control along with the results and savings it can potentially have
+	
+	\quad They first begin by discussing that the smart building concept is targeted at buildings which consume 70 \% of our energy in the US and specifically at commercial buildings where the organization and structure make "smart buildings" truly possible.
+	
+	\quad The first section focusses on sensing which is an important part of smart buildings because the awareness of the attributes in the building is an important part off the decision making process. The first is obviously occupancy because the population distribution is essential to which parts of the buildings will be focussed on. The next is environmental factors like the lighting condition, temperature, and other measures that would have effect. The last and most important sensor data will be energy consumption because our goal is to reduce energy consumption.
+	
+	\quad The next step is the actuation which is the exhibition of control. There are various building elements that need to be "actuated" for the smart building concept to work. The ones the discuss in this paper was HVAC systems. The savings here could be not heating/cooling the building areas where there aren't. The next is managing the devices electrical consumption by turning them off or putting them to sleep. Other ways of actuation are managing lighting and putting computers to sleep.
+	
+	\quad They showed savings  \$.13/kW-H and said that the cost of installing the system can be recovered within one year.
+	
+	\question{2}{Strengths}
+	\begin{itemize}
+		\item Good introduction to smart buildings
+	\end{itemize}
+	\question{3}{Weaknesses}
+	\begin{itemize}
+		\item Would have liked more insight into savings rather than just the cost savings
+	\end{itemize}
+	\question{4}{Future Directions}
+	\begin{itemize}
+		\item Get feedback from the user and adapt to solve issues
+	\end{itemize}
+
+\end{document}
+
+

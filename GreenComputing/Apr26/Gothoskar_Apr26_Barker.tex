@@ -1,0 +1,69 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+	\noindent{\bf #1: #2} \vspace{0.5em}
+	\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Nishad Gothoskar}
+\newcommand{\myandrew}{ngothosk}
+\newcommand{\myhwnum}{2}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{Green Computing}}
+
+\begin{document}
+	
+	\medskip                        % Skip a "medium" amount of space
+	% (latex determines what medium is)
+	% Also try: \bigskip, \littleskip
+	
+	\thispagestyle{plain}
+	\begin{center}                  % Center the following lines
+		{\Large SmartCap: Flattening Peak Electricity Demand in Smart Homes
+} \\
+		\myname \\
+		\myandrew @andrew.cmu.edu\\
+	\end{center}
+	
+	\question{1}{Summary}
+	\quad This paper is about capping peak electricity demand in the household. The problem here is that energy grids must be able to handle peak load. And since its very random they can't predict when they will need to produce what. This usually results in a overgeneration and power wastage. The goal is to regularize total usage and therefore but a more constant upper bound on usage. Their LSF scheduling algorithm  will try and flatten.
+	
+	\quad The will collect data at outlets, panels, and switches in a real home for 82 days. Then they will evaluate their algorithm in a simulation and a real implementation.
+	
+	\quad A description of a Smart Cap home will include both grid and renowable power. Then it will also have a gateway that works with programmable switches and meters to collect data.
+	
+	\quad They developed an online algirthm that modifies background electrical loads to flatten usage/demand. The LSF policy can do that. What makes this problem hard is that its online. It hind sight it is clear to see that jobs can be rearranged to flatten demand quite easily but knowing to do that and giving instructions in real time is tougher. LSF supplies power based on current slack value which is the amount of time we can leave it off. The threshold needs to be selected carefully to prevent deferring too many loads or to have too many backgrounds loads at one time which will result in power spikes that we are trying to avoid.
+	
+	\quad 
+	\question{2}{Strengths}
+	\begin{itemize}
+		\item Simulation and experiment. Something we don't usually see
+	\end{itemize}
+	\question{3}{Weaknesses}
+	\begin{itemize}
+		\item No real power reduction. But I guess that not really the point.
+	\end{itemize}
+	\question{4}{Future Directions}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+
+\end{document}
+
+

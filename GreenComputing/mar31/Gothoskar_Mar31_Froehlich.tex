@@ -1,0 +1,69 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+	\noindent{\bf #1: #2} \vspace{0.5em}
+	\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Nishad Gothoskar}
+\newcommand{\myandrew}{ngothosk}
+\newcommand{\myhwnum}{2}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{Green Computing}}
+
+\begin{document}
+	
+	\medskip                        % Skip a "medium" amount of space
+	% (latex determines what medium is)
+	% Also try: \bigskip, \littleskip
+	
+	\thispagestyle{plain}
+	\begin{center}                  % Center the following lines
+		{\Large Disaggregated
+End-Use Energy Sensing for the Smart Grid
+} \\
+		\myname \\
+		\myandrew @andrew.cmu.edu\\
+	\end{center}
+	
+	\question{1}{Summary}
+	\quad This article provides a full survey of energy disaggregation. It first gives us insight into what exactly it is. Then it goes on to tell us about various techniques of actually doing so and their pros and cons. Then it details what the "value of disaggregated data is". I enjoyed this paper because it relates heavily to my final project. It also gives me more justification for why my project is relevant
+	
+	\quad The value of disaggregated data is to give users more insight into their energy usage. To see where exactly the energy is going into and what the large and small consumers are. Because the truth is, most people don't actually know where the energy in their home is going. Having this detailed summary of usage can help people make changes to their behavior. Blindly saying "you're using too much" won't help users change. But instead telling them where they are using too much energy and other more precise metrics can help them actually know how and in which ways to change their usage.
+	
+	\quad They can also give predictions and suggestions of which devices to shut off.
+	
+	\quad Next, they talk about how they go about disaggregation. The first is the most obvious. Have sensors at each device. This is quite costly but is clearly the easiest and most fool proof solutions. The next is single point sensing where you get only the main powerline measurement. This kind of disaggregation is the hardest because it involves alot of signal processing and analysis. And its not entirely accurate. But what they do look it as things like current consumption, startup characteristics, voltage signatures, and looking for noise patterns.
+	\question{2}{Strengths}
+	\begin{itemize}
+		\item Thorough coverage of the topic
+		\item Insight into various techniques
+	\end{itemize}
+	\question{3}{Weaknesses}
+	\begin{itemize}
+		\item No math (can't help me exactly with my project)
+	\end{itemize}
+	\question{4}{Future Directions}
+	\begin{itemize}
+		\item Apply this sensing technique to other realms
+	\end{itemize}
+
+\end{document}
+
+

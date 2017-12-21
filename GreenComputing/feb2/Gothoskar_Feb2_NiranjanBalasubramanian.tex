@@ -1,0 +1,73 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+	\noindent{\bf #1: #2} \vspace{0.5em}
+	\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Nishad Gothoskar}
+\newcommand{\myandrew}{ngothosk}
+\newcommand{\myhwnum}{2}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{Green Computing}}
+
+\begin{document}
+	
+	\medskip                        % Skip a "medium" amount of space
+	% (latex determines what medium is)
+	% Also try: \bigskip, \littleskip
+	
+	\thispagestyle{plain}
+	\begin{center}                  % Center the following lines
+		{\Large Energy Consumption in Mobile Phones: A Measurement Study and Implications for Network Applications} \\
+		\myname \\
+		\myandrew @andrew.cmu.edu\\
+	\end{center}
+	
+	\question{1}{Summary}
+	\quad The main concept discussed and that was attempted to be mitigated in this paper is \textit{tail energy}, the energy consumed by radio that sits in its high power state even after a process/request has been completed. This is a dilemna because it is inefficient for a system to shut off its radios immediately after a process is finished because of concepts of temporal locality and the fact that its likely it will be used again. But also, you don't know if it'll be used again soon and how soon so you unneccessarily drain energy.
+	
+	\quad But of course, the real issue is that the scheduling problem is NP-hard so we can't get our best case schedule. The best online algorithm can at most be a 1.62 approximation and TailEnder is a 2 approximation algorithm.
+	
+	\quad The research conducted was very thorough in the variation of parameters: location, time-of-day, mobility, devices. They were also very thorough with 3G vs. GSM vs. WiFi as well as Upload and Download.
+	
+	\quad Their main strategy was to bunch up the accesseses and accumulate them before sending them through so as not to have many intermittent accesses as that would maximize the energy overhead of keeping the radios on. The papers abstracts cites the example that a few hundred bytes transferred intermittently on 3G can consume more energy that transferring a megabyte in one shot.
+	
+	\quad So, prefetching data may be in the best interest if you could know with high probability that that information will be used. The downside is you can't be sure that information will be needed.
+	\question{2}{Strengths}
+	\begin{itemize}
+		\item The research conducted takes a lot of "not novel" concepts and incorporates them to make a management system that delivers significant results.
+		\item I enjoyed that they discussed the actual algorithm and the mathematics behind it. That is something alot of papers don't do, they rather just give a brief description of how the algorithm works.
+		\item They actually showed significant improvements and energy savings and significant variation as a result of modified parameters (day vs nights, upload vs download)
+	\end{itemize}
+	\question{3}{Weaknesses}
+	\begin{itemize}
+		\item I feel like they underestimated how much delay matters in a user experience
+		\item With mail, they already do something like accumulating before sending
+		\item But with mostly everything else users don't want to wait - Web browsing, uploading pictures, streaming from netflix.
+	\end{itemize}
+	\question{4}{Future Directions}
+	\begin{itemize}
+		\item A clear direction for this work is for us on our PC to be able to specify delay-tolerance of each of our applications. Some of things we do on our PC we can wait for them to happen. I belive that Mobile devices are a different story when it comes to batching.
+		\item Another direction is to give recommendations on better times of doing a certain "job" like do this at night if you don't need it now. Or can you wait till you accumulate a few more downloads before starting these.
+	\end{itemize}
+
+\end{document}
+
+

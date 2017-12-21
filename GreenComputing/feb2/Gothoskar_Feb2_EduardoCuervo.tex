@@ -1,0 +1,74 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+	\noindent{\bf #1: #2} \vspace{0.5em}
+	\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Nishad Gothoskar}
+\newcommand{\myandrew}{ngothosk}
+\newcommand{\myhwnum}{2}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{Green Computing}}
+
+\begin{document}
+	
+	\medskip                        % Skip a "medium" amount of space
+	% (latex determines what medium is)
+	% Also try: \bigskip, \littleskip
+	
+	\thispagestyle{plain}
+	\begin{center}                  % Center the following lines
+		{\Large MAUI: Making Smartphones Last Longer with Code Offload} \\
+		\myname \\
+		\myandrew @andrew.cmu.edu\\
+	\end{center}
+	
+	\question{1}{Summary}
+	\quad MAUI focusses on the energy efficiency strategy of moving computation which the device is not suited for to a server, who's hardware may be more suited for the computation.  This sounds like the perfect solution but in reality it is an incredibly tough optimization that needs to account for the time for the device-server delivery and response.
+	
+	\quad MAUI's inspiration is a bit different than what other similar projects have said. They say the main contributors to the mobile energy problem are limited battery capacity and demand for energy-hungry applications. The first problem is hard for a device level solution to make any difference since it is making new scientific advances and designing new hardware. So, they take on the challenge of dealing with these energy-hungry and demanding applications.
+	
+	\quad If you think about it our phones are sapped of their energy for 3 main energy-hungry application types: games, video streaming, real-time sensor data. These CPU intensive applications can be mitigated by pushing their energy expensive components to the "cloud".
+	
+	\quad But this puts another demand on application developers. They now need to include in their code which components can be pushed off to servers and with what conditions. This propogates to create more problems, like for example what if the server doesn't respond. Their solution involves essentially running a clone of the application on the server. There are many challenges to doing this and a good portion of the paper deals with how they managed these challenges.
+	
+	\quad As I mentioned earlier the round trip time is crutial to whether we will push work to the server. Becuase we don't want to add to much latency to the application when it isn't entirely necessary.
+	
+	\quad MAUI Solver is the most interesting part of this entire process to me. It basically the engine that decides which items/tasks to push to the sever and which are not worth it to. The whole question at the end of the paper becomes is it worth it to remotely execute parts of the code base, what kind of saving does it \textit{actually} give us.
+	\question{2}{Strengths}
+	\begin{itemize}
+		\item It actually implemented an idea that is discussed in theory most of the time
+		\item This topic will be increasingly popular (and it shows great foresight of the researchers) in the cloud computing space
+		\item There were many challenges which they carefully overcame and were very precise about how they did so (organized)
+	\end{itemize}
+	\newpage
+	\question{3}{Weaknesses}
+	\begin{itemize}
+		\item I feel like running this interface could run into alot of bugs and errors because its execution depends on two devices running properly.
+		\item For kind of the same reason, a mobile device loses its "individuality" (I don't know how to phrase that) being dependent on a server for its optimal performance
+	\end{itemize}
+	\question{4}{Future Directions}
+	\begin{itemize}
+		\item I liked the part they discussed about how when you were on a small closed network like your home network you could use your computer as the auxilary device and your phone and computer could run a variant of this MAUI software
+	\end{itemize}
+
+\end{document}
+
+

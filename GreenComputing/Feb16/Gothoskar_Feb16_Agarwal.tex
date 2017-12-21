@@ -1,0 +1,66 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+	\noindent{\bf #1: #2} \vspace{0.5em}
+	\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Nishad Gothoskar}
+\newcommand{\myandrew}{ngothosk}
+\newcommand{\myhwnum}{2}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{Green Computing}}
+
+\begin{document}
+	
+	\medskip                        % Skip a "medium" amount of space
+	% (latex determines what medium is)
+	% Also try: \bigskip, \littleskip
+	
+	\thispagestyle{plain}
+	\begin{center}                  % Center the following lines
+		{\Large Somniloquy: Augmenting Network Interfaces to Reduce PC Energy Usage} \\
+		\myname \\
+		\myandrew @andrew.cmu.edu\\
+	\end{center}
+	
+	\question{1}{Summary}
+	\quad This research is focussing on ways of creating energy proportionality. They do this by finding ways of giving the main processor time to rest when it's fully potential is really not necessary. This is done by giving work over to a device that is more suited for the job of sitting in idle and waiting for a trigger to react accordingly.
+	
+	\quad They do this by having another low-power processor running on the network adapter and radios that can be listening on ports and waiting for events while the main processor and computer can sleep. This way you get energy savings because you can just have a energy efficient smaller, localized device running instead of the entire computer.
+	
+	\quad This device is used by writing application stubs that are what will run on the Somniloquy daemon when the computer goes to sleep. It just transfers its network state (ports listening, etc.) and the application stubs provide a reaction policy of what it can natively do, what it should ignore, and what events need to trigger to wake up the main processor.
+	\question{2}{Strengths}
+	\begin{itemize}
+		\item Guaranteed advantage. Because you can only help the energy efficiency. You let the computer sleep more than it normally would
+		\item Detailed description of the architecture and 'gumstix'
+	\end{itemize}
+	\question{3}{Weaknesses}
+	\begin{itemize}
+		\item Another piece of hardware with another OS. More opportunity for bugs and crashes.
+		\item Harder to program
+	\end{itemize}
+	\question{4}{Future Directions}
+	\begin{itemize}
+		\item Have these dedicated microcontrollers for other components so essentiall the main OS just delegates tasks to the more energy efficient processors. This helps you be able to get energy proportionality
+	\end{itemize}
+
+\end{document}
+
+

@@ -1,0 +1,74 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+	\noindent{\bf #1: #2} \vspace{0.5em}
+	\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Nishad Gothoskar}
+\newcommand{\myandrew}{ngothosk}
+\newcommand{\myhwnum}{2}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{Green Computing}}
+
+\begin{document}
+	
+	\medskip                        % Skip a "medium" amount of space
+	% (latex determines what medium is)
+	% Also try: \bigskip, \littleskip
+	
+	\thispagestyle{plain}
+	\begin{center}                  % Center the following lines
+		{\Large The Hitchhiker’s Guide to Successful Residential Sensing Deployments
+} \\
+		\myname \\
+		\myandrew @andrew.cmu.edu\\
+	\end{center}
+	
+	\question{1}{Summary}
+	\quad The focus of this paper is a general discussion of the main challenges and important goals of a sensor network in the home. The user interaction side of sensor tech is not something we regularly discuss. Most of the discussion is on technical challenges. This paper tells us about the important factors that aren't usually considered in the design of a sensor deployment in the home.
+	
+	\quad They had a large scale sensor deployment with over 1000 sensors in 20+ homes for a year period. Their experience showed them that the larger the number of sensors, homes, and time, the difficulty scales exponentially at an inflection point.
+	
+	\quad Failure analysis and reporting is an important part of a rigorously built sensor network. Becuase you can't have constant maintainance of the system so you should be able to detect faults and report the cause properly to allow the users to fix or repair the cause of the break. The classifier they trained reported link loss, battery dead, plug, power outage and various other diagnosis. A good measurement is the sensor-time down.
+	
+	\quad The next section is the hitchhiker's guide. The problems they discuss cover a wide range of things we usually take for granted.
+	
+	\quad Powering the sensors is an issue. Most people think we can just use wall sockets but many times that isn't the valid solution. First of all, the outlets are limited and would involve using many wires. Other solution included using inline power or just self powering using solar (like the water temperature difference powering).
+	
+	\quad Next they talked about connectivity and how a 1-hop system is sometimes not enough. And that you need to account for the "conditions". And make the system one that isn't dependent on maintannce and alot of user interaction
+	
+	\quad The last thing I enjoyed is that they showed aesthetics matter. As researchers we don't really seem to care about aesthetics. But actual users usually have that as a priority right behind functionality. 
+	\question{2}{Strengths}
+	\begin{itemize}
+		\item Coverage of alot of the aspects we take for granted
+		\item Differentiates the myths
+	\end{itemize}
+	\question{3}{Weaknesses}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\question{4}{Future Directions}
+	\begin{itemize}
+		\item Deploying a sensor network that accounts for all these myths/truths
+	\end{itemize}
+
+\end{document}
+
+

@@ -1,0 +1,73 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+	\noindent{\bf #1: #2} \vspace{0.5em}
+	\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Nishad Gothoskar}
+\newcommand{\myandrew}{ngothosk}
+\newcommand{\myhwnum}{2}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{Green Computing}}
+
+\begin{document}
+	
+	\medskip                        % Skip a "medium" amount of space
+	% (latex determines what medium is)
+	% Also try: \bigskip, \littleskip
+	
+	\thispagestyle{plain}
+	\begin{center}                  % Center the following lines
+		{\Large An Operating System for the Home
+} \\
+		\myname \\
+		\myandrew @andrew.cmu.edu\\
+	\end{center}
+	
+	\question{1}{Summary}
+	\quad Like many of the operating system papers we have read in this class, this paper looks to a pply a pc-like organization to tech in the home. Luckily they ran an actual implementation. Smart home is not a new idea. It has been discussed for decades. But for a large scale commercial use, there are various barriers to entry. Thats why it has remained in research stage for so long.
+	
+	\quad We can view the home as computing system as such. We have many networked devices which are our peripherals. The task we do on them are our applications. We can manage these devices, add tasks, and add devices.
+	
+	\quad The HomeOS centralizes all the devices in the home / networks them together. Then applications to modify and use these devices are written on top of the HomeOS and shared on the HomeStore.
+	
+	\quad This still bring up the struggle from the previous paper that you need someone technically skilled to manage the network.
+	
+	\quad They tested this question through field tests in 12 real homes. It turned out users could manage the HomeOS and like being able to extend their tech with these applications and added control.
+	
+	\quad On the other hand when things broke it was hard for users to fix.
+	
+	\quad Essnetially this project is leading towards a world where we can abstract our home and begin writing useful applications.
+	\question{2}{Strengths}
+	\begin{itemize}
+		\item User study
+	\end{itemize}
+	\question{3}{Weaknesses}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+	\question{4}{Future Directions}
+	\begin{itemize}
+		\item Make more non-tech friendly
+	\end{itemize}
+
+\end{document}
+
+

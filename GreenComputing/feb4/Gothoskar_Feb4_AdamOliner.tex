@@ -1,0 +1,70 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+	\noindent{\bf #1: #2} \vspace{0.5em}
+	\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Nishad Gothoskar}
+\newcommand{\myandrew}{ngothosk}
+\newcommand{\myhwnum}{2}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{Green Computing}}
+
+\begin{document}
+	
+	\medskip                        % Skip a "medium" amount of space
+	% (latex determines what medium is)
+	% Also try: \bigskip, \littleskip
+	
+	\thispagestyle{plain}
+	\begin{center}                  % Center the following lines
+		{\Large Carat: Collaborative Energy Diagnosis for Mobile Devices} \\
+		\myname \\
+		\myandrew @andrew.cmu.edu\\
+	\end{center}
+	
+	\question{1}{Summary}
+	\quad This paper focusses on catching \textit{energy anomalies} which are \textit{energy hogs} and \textit{energy bugs}. Their technique is to use crowdsourcing to get data about energy usage in different scenarios (across many people). Hogs are apps that drain alot of energy compared to other apps and bugs are apps that drain alot of energy under specific circumstances.
+	
+	\quad The paper then discusses how it detects this bugs and hogs through probability distributions and metrics. Being able to aggregate all data to predict what an app consumes in power when it is running normally so it can know when something is running abnormaly.
+	
+	\quad They also discussed how their backend analysis is done by Spark, a framework like Hadoop, that supports map/reduce operations and such need for big data analytics.
+	
+	\quad Their research is very thorough because they use actual instrumentation to check and guarantee that their measurements are accurate. And, that their app doesn't add significant overhead. They also deployed and showed the results of the bugs and hogs that their app detected (some of which were intentionally placed)
+	\question{2}{Strengths}
+	\begin{itemize}
+		\item I enjoyed how they gave the probablility calculations and math behind how they detects hogs and bugs and create a model for how an app runs usually.
+		\item Unlike many of the other papers we have read they actually deployed this to a largue userbase and collected data from actual users.
+		\item I also like how they gave examples of the hogs and bugs that they caught
+	\end{itemize}
+	\question{3}{Weaknesses}
+	\begin{itemize}
+		\item Not really a weakness but I was a bit confused why they believed the main cause of energy inefficiency was bad/inexperienced developers
+		\item Why only hogs and bugs?
+	\end{itemize}
+	\question{4}{Future Directions}
+	\begin{itemize}
+		\item This project could be extended to actually find the blocks of code that are causing this energy efficiencies and stop them from executing
+		\item We kind of talked about this in our meeting today but for privacy
+	\end{itemize}
+
+\end{document}
+
+

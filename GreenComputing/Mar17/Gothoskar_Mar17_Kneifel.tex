@@ -1,0 +1,73 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+	\noindent{\bf #1: #2} \vspace{0.5em}
+	\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Nishad Gothoskar}
+\newcommand{\myandrew}{ngothosk}
+\newcommand{\myhwnum}{2}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{Green Computing}}
+
+\begin{document}
+	
+	\medskip                        % Skip a "medium" amount of space
+	% (latex determines what medium is)
+	% Also try: \bigskip, \littleskip
+	
+	\thispagestyle{plain}
+	\begin{center}                  % Center the following lines
+		{\Large Life-cycle carbon and cost analysis of energy efficiency measures in new commercial buildings
+} \\
+		\myname \\
+		\myandrew @andrew.cmu.edu\\
+	\end{center}
+	
+	\question{1}{Summary}
+	\quad This paper works on addressing and surveying the possible energy savings in the space of buildings. It does not present actual implementations but instead delivers results showing what effects adherence to certain standards would have.
+	
+	\quad The paper first gives and overview of the standards they are referring to. For example the ASHRAE Advanced Energy Design Guidelines. These guidelines involve improving building envelope, lighting controls, plug and process loads, and HVAC system. The recommendations are based on advancing technologies and design approaches.
+	
+	\quad Next they talk about how they will go about their study. Their focus is obviously buildings because they say that's a major contributor to the energy problem and there is good potential for improvement. They want to have a thorough survey so they studied various types of buildings: Lodging like Dorms and Apartments, Educational buildings, Office buildings of different size and scale, and then retail and restaurants.
+	
+	\quad They proceed by detailing how they are accumulating data for costs. Costs from buildings come in various ways. The first is obviously the cost to build. And here, specifically the cost to use the suitable materials and design. Then, the costs of maintenance and repairs. Then the costs of energy to supply electricity and run the hvac systems. And then at any point in time you need to be able to calculate the value of the building (building residual value). And this comes from building "life expectancies".
+	
+	\quad Then they used something similar to what we've seen before of simulating time. And  seeing the aggregated costs and energy usage and other metrics. They run these simulations on all different buildings types with different designs and standards,etc. varying parameters as they go.
+	
+	\quad The conclusions see a 30\% reduction in carbon footprint in a 10 year study period. This is extremely significant and really proves the importance of maintaining energy efficient standards in our modern structures.
+	\question{2}{Strengths}
+	\begin{itemize}
+		\item Analyzing "carbon footprint"
+
+	\end{itemize}
+	\question{3}{Weaknesses}
+	\begin{itemize}
+		\item All hypothetical and theory. No implementation
+		\item Give data on savings of other standards
+	\end{itemize}
+	\question{4}{Future Directions}
+	\begin{itemize}
+		\item Not just technical applications. Cause policy changes in government
+	\end{itemize}
+
+\end{document}
+
+

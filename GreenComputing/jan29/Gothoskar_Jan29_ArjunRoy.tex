@@ -1,0 +1,75 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+	\noindent{\bf #1: #2} \vspace{0.5em}
+	\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Nishad Gothoskar}
+\newcommand{\myandrew}{ngothosk}
+\newcommand{\myhwnum}{2}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\pagestyle{fancyplain}
+
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{Green Computing}}
+
+\begin{document}
+	
+	\medskip                        % Skip a "medium" amount of space
+	% (latex determines what medium is)
+	% Also try: \bigskip, \littleskip
+	
+	\thispagestyle{plain}
+	\begin{center}                  % Center the following lines
+		{\Large Energy Management in Mobile Devices with the Cinder Operating System} \\
+		\myname \\
+		\myandrew @andrew.cmu.edu\\
+	\end{center}
+	
+	\question{1}{Summary}
+	\quad This paper steps a little bit away from what the last discussed about 2-way interaction between OS and application. In this Cinder OS scheme, the OS is the "boss". A better term would be that the OS is the "bank" and delegates the resources it properly and efficiently to the applications/processes that need it.
+	
+	\quad The two defining terms of their design are \textit{reserves} and \textit{taps}. On a thread level, the OS assigns reserves of energy accordingly to what it believes the thread needs and deserves. The clever part is that an application itself can do what it likes with its given reserve whether to split it up, assign it to other spawned threads.
+	
+	\quad The tap is basically the tube that moves energy between reserves. It has a defined fixed rate at which it transfers energy, giving the OS the ability to restrict the rate of energy consumption. This schema for enegy control and allocation is relatively simple, making it easier for application developers to properly deal with and efficiently comply with the OS guidlines.
+	
+	\quad Specifically the Cinder OS puts the burden of modification and compliance on the application. The application must be coded to deal properly with these energy reserves and taps or else things will not go smoothly. The CPU will not process requests if your app has emptied its reserves, which will cause your app to bug, lag, and maybe even crash.
+	
+	\quad But in the end the OS is basically "managing" energy in similar ways it managers CPU and memory. It gives space (malloc), allows to get processing power (pthread), and reap/recover its resources (wait/kill)
+	
+	\question{2}{Strengths}
+	\begin{itemize}
+		\item The good thing about this is it will force application developers to be more considerate and aware with their energy usage therefore reducing the overall everyday energy use of mobile devices.
+		\item Actually entirely developed a research mobile Operating System
+		\item "Section 4 shows that the radio has a high initial cost and a much smaller amor- tized price for bulk transfers" - we talked about the costliness of the radio, so the take they have is to just let it "build up" and then do it in bulk
+		\item It might actual deter apps from using ads! Because they are aware they are wasting their own resources.
+	\end{itemize} \break
+	\question{3}{Weaknesses}
+	\begin{itemize}
+		\item The possible downside is that it might be unattractive to application developers to have know how to deal with the Cinder Interface
+		\item I think there should be internal SIGnals sent to the application if they run out of resources so they can handle it properly. Not just not process their requests, because that will just be entirely too buggy.
+		\item The improvements aren't entirely as significant as the first paper.
+	\end{itemize}
+	\question{4}{Future Directions}
+	\begin{itemize}
+		\item The obvious extension would be to extend this to PCs because as I said earlier, I believe the computer already does the same thing with its other resources... why not with energy
+		\item Port more common apps to be compatible with this interface so possible people will download and install on their devices (more usage helps with advancements)
+	\end{itemize}
+
+\end{document}
+
+

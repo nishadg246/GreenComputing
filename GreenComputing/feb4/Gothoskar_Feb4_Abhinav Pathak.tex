@@ -1,0 +1,70 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+	\noindent{\bf #1: #2} \vspace{0.5em}
+	\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Nishad Gothoskar}
+\newcommand{\myandrew}{ngothosk}
+\newcommand{\myhwnum}{2}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{Green Computing}}
+
+\begin{document}
+	
+	\medskip                        % Skip a "medium" amount of space
+	% (latex determines what medium is)
+	% Also try: \bigskip, \littleskip
+	
+	\thispagestyle{plain}
+	\begin{center}                  % Center the following lines
+		{\Large Fine Grained Energy Accounting on Smartphones with Eprof} \\
+		\myname \\
+		\myandrew @andrew.cmu.edu\\
+	\end{center}
+	
+	\question{1}{Summary}
+	\quad This paper focusses on the development of a \textit{gprof} for mobile energy usage called \textit{eprof}. Their focus is being able to provide an app developer exactly the information in the right format and context that will be useful to them.
+	
+	\quad The main problem they faced is linking energy usage to the specific process they are coming from and is it a process, a thread, a subroutine, or a system call. ANother challenge was dealing with asynchronous power behavior, a component consuming power even after its use has been completed. (tail energy like we talked about in a previous paper)
+	
+	\quad This profiler really gives developers more insight into what kind of consumption their apps have. This helps them optimize and write apps that are more efficient to run. But again, this paper puts most of the blame on apps
+	
+	\quad I still think the real change needs to come from hardware. But I understand that is much harder to do, as both papers touch on
+	
+	\question{2}{Strengths}
+	\begin{itemize}
+		\item Testing profiling on popular apps gives us insight on how eprof works on a variety of different type
+		\item I feel like integrating this into developing software like Visual Studio and XCode will make it something that developers have open all the time. Raising developer awareness about energy usage is key
+	\end{itemize}
+	\question{3}{Weaknesses}
+	\begin{itemize}
+		\item I didn't like how they dealt with asynchronous power. It just attributes it to the last entity. This might say an app is using more energy than it actually is.
+		\item Maybe iOS too.
+	\end{itemize}
+	\question{4}{Future Directions}
+	\begin{itemize}
+		\item Recommendations on how to reduce energy usage
+		\item A little bit of a hard to understand paper.
+	\end{itemize}
+
+\end{document}
+
+

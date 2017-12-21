@@ -1,0 +1,71 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+	\noindent{\bf #1: #2} \vspace{0.5em}
+	\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Nishad Gothoskar}
+\newcommand{\myandrew}{ngothosk}
+\newcommand{\myhwnum}{2}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{Green Computing}}
+
+\begin{document}
+	
+	\medskip                        % Skip a "medium" amount of space
+	% (latex determines what medium is)
+	% Also try: \bigskip, \littleskip
+	
+	\thispagestyle{plain}
+	\begin{center}                  % Center the following lines
+		{\Large Human Mobility Modeling at Metropolitan Scales
+} \\
+		\myname \\
+		\myandrew @andrew.cmu.edu\\
+	\end{center}
+	
+	\question{1}{Summary}
+	\quad Having an understanding of how a certain population is distributed over a region is more significant a piece of information (in the field of GC) than most people think. Energy is usually consumed more when there are more people. So having an understanding of where people and how they move (not fine grained but more in general trends) can help understand where demand is and when it will change.
+	
+	\quad They first explain that they are looking at reproducing human density over time especially in the scale of metropolitan areas. These will vary with respect to distributions of offices, infrastructure and other factors.
+	
+	\quad They want to improve on previous work in that they want find patterns in movement and specifically correlate that with time. And, they are looking to take to a larger scale put not too large that the info is spread too thin. Their method lies in Call Detail Records. Our mobile phones are always on us and the cellular networks can approximate locations from the call towers your calls were routed through. The issue is that you can't get extremely fine grained 
+	
+	\quad A clear pattern can be made just by looking at the top 2 towers you use. This can be telling maybe of your home and work locations. They used Gaussian models for the calls and created a WHERE2 model which represents the calls and locations with respect to 2 locations.
+	
+	\quad Having models of the population they say is useful in understanding message propogation. They showed various modelling techniques like WRWP, and WHERE 2 and 3.
+	\question{2}{Strengths}
+	\begin{itemize}
+		\item Simplify one piece of data so the large scale will be easier to work with
+	\end{itemize}
+	\question{3}{Weaknesses}
+	\begin{itemize}
+		\item What are the green computing applications?
+		\item I did not understand where this fits in
+		\item Confused by paper
+	\end{itemize}
+	\question{4}{Future Directions}
+	\begin{itemize}
+		\item Use this population movement data to modify where we route energy
+	\end{itemize}
+
+\end{document}
+
+

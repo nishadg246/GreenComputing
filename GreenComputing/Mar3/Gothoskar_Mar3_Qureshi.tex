@@ -1,0 +1,72 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+	\noindent{\bf #1: #2} \vspace{0.5em}
+	\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Nishad Gothoskar}
+\newcommand{\myandrew}{ngothosk}
+\newcommand{\myhwnum}{2}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{Green Computing}}
+
+\begin{document}
+	
+	\medskip                        % Skip a "medium" amount of space
+	% (latex determines what medium is)
+	% Also try: \bigskip, \littleskip
+	
+	\thispagestyle{plain}
+	\begin{center}                  % Center the following lines
+		{\Large Cutting the Electric Bill for Internet-Scale Systems} \\
+		\myname \\
+		\myandrew @andrew.cmu.edu\\
+	\end{center}
+	
+	\question{1}{Summary}
+	\quad This paper again deals with methods of efficiency in large scale data centers. An important aspect that this paper properly makes clear is that its looking to optimize cost, not necessarily the energy efficiency. It may seem that these are the same thing, however what they show is that since datacenters and networks are spread out geographically along with the fact that power prices are constantly changing that we should move workload to those lower cost areas. They assume that the infrastructure for this is already set up. In most cases, it is because companies want to be able to shift load to other server in cases of shutdowns or other problems. The paper proposes to use that same infrastructure for rerouting and use it to save money.
+	
+	\quad But, this cost saving is highly dependent on many factors. First it is dependent on energy elasticity. Meaning when we reduce the work load on a datacenter, we want to see a significant drop in power consumption. Otherwise, our methods would be useless because it would have little effect to shift load. It also says that this will work better on larger scale than smaller scale systems.
+	
+	\quad Now how they measure what kind of saving they could achieve is similar to what other researc project with non-feasible implementation do. The measured realtime datacenter traffic and next to that they measure realtime energy price fluctuations in various geographic location. 29 different locations. These prices can fluctuate hourly and surprisingly there are significant differences between them.
+	
+	\quad 
+	
+	\question{2}{Strengths}
+	\begin{itemize}
+		\item Datacenter might adopt this becuase it requires nothing more than rerouting software/algorithms
+		\item Infrastructure is already built
+	\end{itemize}
+	\question{3}{Weaknesses}
+	\begin{itemize}
+		\item Add latency to transactions
+		\item This is messing with economic markets
+		\item Power companies are gonna adapt
+		\item The prices are changing due to realtime markets so if everyone is doing this, its not going to work
+	\end{itemize}
+	\question{4}{Future Directions}
+	\begin{itemize}
+		\item Collaborate with many companies (Googe, Microsoft, Akamai, etc.) and this can make this optimization better for everyone
+		\item The problem is people don't want to share (secretive)
+	\end{itemize}
+
+\end{document}
+
+

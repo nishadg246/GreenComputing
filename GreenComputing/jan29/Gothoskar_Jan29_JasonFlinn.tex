@@ -1,0 +1,76 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+	\noindent{\bf #1: #2} \vspace{0.5em}
+	\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Nishad Gothoskar}
+\newcommand{\myandrew}{ngothosk}
+\newcommand{\myhwnum}{2}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{Green Computing}}
+
+\begin{document}
+	
+	\medskip                        % Skip a "medium" amount of space
+	% (latex determines what medium is)
+	% Also try: \bigskip, \littleskip
+	
+	\thispagestyle{plain}
+	\begin{center}                  % Center the following lines
+		{\Large Energy-aware adaptation for mobile applications} \\
+		\myname \\
+		\myandrew @andrew.cmu.edu\\
+	\end{center}
+	
+	\question{1}{Summary}
+	\quad This paper focuses on the concept of a piece of information's \textit{fidelity}. A main challenge to energy efficient applications is that there needs to be a 2-way communications of requests and fulfillments between the application layer and operating system layer. The application needs to tell the OS what it needs and the OS needs to keep the application notified about whether it can provide. Going back to the term \textit{fidelity}, the research presented here focusses on gaining energy savings my reducing information fidelity when needed. In class we discuss that a more effective way to measure energy efficiency was to talk about $\frac{J}{bit}$ rather than just Joules. So in essense, by finding ways to still get a substantial amount of the information across, but with fewer bits, we can reduce energy usage.
+	
+	\quad Their "inspiration, was the discovery, using their PowerScope tool, a way to measure power consumption of individual parent processes and their children as well, that reducing fidelity of data does give significant energy savings
+	
+	\quad So in their research they have created the interface for which an operating system can choose a "level" of data fidelity in order to satisfy its energy restriction/bounds. Then, they wrote a few applications on top of this OS interface and were written so that the OS and application could have this 2-way communication about resource expectations.
+	
+	\quad But fidelity is not only limited to the space of applications. The paper also discusses display fidelity and how not neccessarily all parts of the display are being used at once so if we assign lower power backlights but have more of them, we can maximize the ones in the part of the screen being used and dim the others. This is a concept I have seen with 3D displays (company I interned with) where they wanted to increase the number of backlights but localize the ones that needed to be on. Their reason to do this was to protect the eye and stop the discomfort associated with many backlights along with 3d glasses. While their intentions were different, their process was the same.
+	
+	\quad Finally, they discussed their end goal of these components. They want to be able to stretch a battery life a certain amount/cap energy usage to a certain amount. But just this would be easy...Just turn everything down to lowest quality/fidelity. They also want to ensure a good user experience. Meaning keep it the highest fidelity possible (to not overuse energy) and don't switch fidelities too often (distracting and annoying to the user). To do this the OS calculates current usage and future usage to make decisions on what instructions of fidelities it must give to each of the applications.
+	
+	\question{2}{Strengths}
+	\begin{itemize}
+		\item This paper really shows that this application-OS communication really does work to reduce energy usage
+		\item The above also implies that maybe a heavy part of computing energy waste comes from the fact that applications don't know about what the OS/other applications so it isn't prepared to adapt when it should
+		\item Their research actually implements what most discussion of energy efficient computing only speak about in theory
+		\item Show a variety of applications and how they each have different "fidelity" levels in different ways
+		\item Discuss concurrency (what we discussed about in class...running two things at the same time when possible)
+	\end{itemize}
+	\question{3}{Weaknesses}
+	\begin{itemize}
+		\item When I first began reading I thought when they were going to reduce fidelity, it was just gonna be pushing some stuff to the server and increasing latency etc., but many of these fidelity reductions were actual visible UI reductions(next bullet)
+		\item Black and white video, lower resolution maps, smaller vocabulary detection, etc.
+		\item But the problem with this is Microsoft, Apple, and the other big players aren't going to implement this because user interaction is what they are selling. They know their customers aren't going to want a reduction in the experience so they won't change it.
+	\end{itemize}
+	\question{4}{Future Directions}
+	\begin{itemize}
+		\item Obviously this project can be extended to create a full suite of applications to make this computer fully utilizable
+		\item Attempt to make optimizations that won't change the front end that the user sees, like find computations that can be delayed until they accumulate and then be executed concurrently - I liked that part of the article (concurrency)
+	\end{itemize}
+
+\end{document}
+
+

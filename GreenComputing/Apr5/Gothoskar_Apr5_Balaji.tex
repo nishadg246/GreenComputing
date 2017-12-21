@@ -1,0 +1,66 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+	\noindent{\bf #1: #2} \vspace{0.5em}
+	\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Nishad Gothoskar}
+\newcommand{\myandrew}{ngothosk}
+\newcommand{\myhwnum}{2}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{Green Computing}}
+
+\begin{document}
+	
+	\medskip                        % Skip a "medium" amount of space
+	% (latex determines what medium is)
+	% Also try: \bigskip, \littleskip
+	
+	\thispagestyle{plain}
+	\begin{center}                  % Center the following lines
+		{\Large Disaggregated
+End-Use Energy Sensing for the Smart Grid
+} \\
+		\myname \\
+		\myandrew @andrew.cmu.edu\\
+	\end{center}
+	
+	\question{1}{Summary}
+	\quad This paper is very much like the previous paper. However, in their inspiration they include not just buildings but "smart environments" in general. The fact that we availability of cheap sensors, there is much need of an intelligent way to combine and manage the environment in which these sensors "live".
+	
+	\quad They start talking about the naming schemes and structure and how it needs to be standardized. It's similar to the problem Joon was trying to solve about parsing the string and extracting the metadata from the string. Methods for identifying the sensor type include the bag of words technique. Then they can cluster sensors of the same type. Hierarchical clustering is taking this existing clusters and grouping them based on similarities of the clusters. Now they can combine this with the time series data and how different sensor types have different data patterns and train a classifier with both of these inputs. This is a semisupervised learning problem since some of the labels need to be done by an expert. The great thing is they can combine data across buildings for better accuracy. And this helps reduce how much manual labelling must be done.
+	
+	\quad So essentially this project isn't as strict as the BuildingDepot paper. It is more general and therefore more applicable to any sort of large sensor network. It eliminates the need for much human involvement, but allows a system to, by itself, learn what sensors are measuring what and therefore allow it to understand exactly what this sensor network is measuring.
+	\question{2}{Strengths}
+	\begin{itemize}
+		\item Made it a priority to limit human involvement as much as possible because people don't like systems that take alot of time 
+	\end{itemize}
+	\question{3}{Weaknesses}
+	\begin{itemize}
+		\item Little description of the implementation (small section)
+	\end{itemize}
+	\question{4}{Future Directions}
+	\begin{itemize}
+		\item Home management system
+	\end{itemize}
+
+\end{document}
+
+

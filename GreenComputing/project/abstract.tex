@@ -1,0 +1,66 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\graphicspath{ {/} }
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+	\noindent{\bf #1: #2} \vspace{0.5em}
+	\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Nishad Gothoskar}
+\newcommand{\myandrew}{ngothosk}
+\newcommand{\myhwnum}{2}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{10-601}}
+
+\begin{document}
+	
+	\medskip                        % Skip a "medium" amount of space
+	% (latex determines what medium is)
+	% Also try: \bigskip, \littleskip
+	
+	\thispagestyle{plain}
+	\begin{center}                  % Center the following lines
+		{\Large Green Computing Project Abstract} \\
+		\myname \\
+		\myandrew \\
+	\huge{Bluetooth Location System}
+\end{center}
+\quad In this project, we will construct a Local Positioning system using Bluetooth Low Energy hubs. Using an array of well-spaced and carefully positioned hubs we can aggregate estimated proximity data and predict the position of a user. There are two primary inspirations for this. The first is that having a sense of where people are in a building and how populated it is helps make more informed decisions on HVAC, power, etc. control. This can eliminate wastage of resources. The second inspiration is given that most users will be carrying some bluetooth enabled device and bluetooth is one of the least energy costly radios, its the best radio to use for this positioning.
+
+\quad The first and simplest model for positioning is shown below: 
+\begin{center}
+	\includegraphics[scale=0.7]{fig1}
+\end{center}
+
+
+\quad In this model, we can predict location by comparing signal strengths at two points. From A to B signal strength will increase in sensor 1 and sensor 2. From B to C, signal strength will remain consistent in sensor 1 but increase in sensor 2. From C to D, strength decreases in sensor 1 but increases in 2. From D to E, sensor strength decreases in 1 but remains about the same in 2. Finally, E to F causes sensor strength in both sensors to decrease. This is the simplest model for position detection along a straight line. A practical application for this relatively simple model is to track entrance and exit to a room i.e. Sensor 1 would go outside the door and Sensor 2 would be inside. Now a movement form A to F represents someone entering the room while F to A represents an exit. This is a useful tool to model room occupancy.
+
+\quad But this model can be abstracted to larger and more complex systems, to detect occupancy of larger scale buildings like the Gates building. But this comes with several obstacles:
+\begin{itemize}
+	\item Being able to properly estimate proximity with the data the sensor provides
+	\item Being able to passively detect bluetooth devices (no direct activation/connection)
+	\item Being able to sample relatively often (refresh rate of sensor)
+\end{itemize} 
+
+\quad There are other directions in which this project can go. As discussed with the Google Physical Web team, they are working with bluetooth beacons. So where I could add elements of the "beacon" concept to this project is by providing users with access to population density maps of the building. And in general, even if I cannot pinpoint exact locations of users I can use these sensors to build a density/heat map of where people are in a building.
+
+\end{document}
+
+

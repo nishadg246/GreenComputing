@@ -1,0 +1,68 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+	\noindent{\bf #1: #2} \vspace{0.5em}
+	\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Nishad Gothoskar}
+\newcommand{\myandrew}{ngothosk}
+\newcommand{\myhwnum}{2}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{Green Computing}}
+
+\begin{document}
+	
+	\medskip                        % Skip a "medium" amount of space
+	% (latex determines what medium is)
+	% Also try: \bigskip, \littleskip
+	
+	\thispagestyle{plain}
+	\begin{center}                  % Center the following lines
+		{\Large No “Power” Struggles: Coordinated Multi-level Power Management for the Data Center} \\
+		\myname \\
+		\myandrew @andrew.cmu.edu\\
+	\end{center}
+	
+	\question{1}{Summary}
+	\quad This paper deals with the problem that datacenters have so many variables that they want to optimze. Power, efficiency, bandwith, latency, etc. There is loads of reasearch and work in optimizing the factors. We have talked about many of them throughout the class. But they are all of major importanct to these companies. However, when we deploy solutions individually for each of these they don't work well together. They may interfere with each other not allowing them to function properly and could even make these problems worse.
+	
+	\quad With a multivariate optimization problem, they are looking to do a gradient descent style method that every so often adjusts parameters of the model to optimize the variables. The design is basically a set of manager that work together. Those managers are efficiency controllers, power cappers, group power cappers, and virtual machine controllers.
+	
+	\quad Also, like the other papers, they use trace-driven evaluation. In this case they used 180 different traces. And evaluated performance on each. They found capabilities of savings to be +60\%. They also saw that the effectiveness of each of the components was different at different utilizations and loads. The VCM was usefull at lower loads but at higher loads the EC become more useful while the VCM was less.
+	
+	\quad 
+	
+	\question{2}{Strengths}
+	\begin{itemize}
+		\item Takes into account more than just cost like the previous paper
+		\item Because there are many parameters of importance to companies running data centers
+	\end{itemize}
+	\question{3}{Weaknesses}
+	\begin{itemize}
+		\item Didn't discuss enough about the overhead of managing all this. Is it worth it?
+	\end{itemize}
+	\question{4}{Future Directions}
+	\begin{itemize}
+		\item Allow system for companies to choose what they want to optimize and what they are willing to give up in terms of performance/latency and all those metrics.
+	\end{itemize}
+
+\end{document}
+
+

@@ -1,0 +1,67 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+	\noindent{\bf #1: #2} \vspace{0.5em}
+	\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Nishad Gothoskar}
+\newcommand{\myandrew}{ngothosk}
+\newcommand{\myhwnum}{2}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{Green Computing}}
+
+\begin{document}
+	
+	\medskip                        % Skip a "medium" amount of space
+	% (latex determines what medium is)
+	% Also try: \bigskip, \littleskip
+	
+	\thispagestyle{plain}
+	\begin{center}                  % Center the following lines
+		{\Large Duty-Cycling Buildings Aggressively: The Next Frontier in HVAC Control
+} \\
+		\myname \\
+		\myandrew @andrew.cmu.edu\\
+	\end{center}
+	
+	\question{1}{Summary}
+	\quad The paper first argues why the problem they are targeting is actually a significant one. building energy consumption accounts for 40\% of power usage. As like the other paper, it points out flaws in existing building management technologies in that they don't incorporate people in the model.
+	
+	\quad The main components of the sysmte are occupancy sensor nodes, wireless network infrastructure, and a control architecture. The occupancy nodes need to be low power and wireless. They use passive infrared sensors.  The data collection network, which gets data from the proximity sensors is an important part of the entire system. They propose using middle man base stations to get the data from the sensors in their error and then relay them to the infrastructure network. This ensures good radio coverage to all the stations. The final components involves data analysis and control. They say most of the EMS protocols have already been developed.
+	
+	\quad Some of the more informative data will take time to aggregate and look for trends. They proposed that patterns will expose themselves. Some of the stuff we have seen in previous papers. The analysis of savings and gains is very thorough.
+	\question{2}{Strengths}
+	\begin{itemize}
+		\item Automated change
+
+	\end{itemize}
+	\question{3}{Weaknesses}
+	\begin{itemize}
+		\item Other locations
+		\item UCSD has alot of existing infrastructure
+	\end{itemize}
+	\question{4}{Future Directions}
+	\begin{itemize}
+		\item Expand to more large scale control of more of the building's infrastructure
+	\end{itemize}
+
+\end{document}
+
+

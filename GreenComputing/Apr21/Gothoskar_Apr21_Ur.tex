@@ -1,0 +1,72 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+	\noindent{\bf #1: #2} \vspace{0.5em}
+	\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Nishad Gothoskar}
+\newcommand{\myandrew}{ngothosk}
+\newcommand{\myhwnum}{2}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{Green Computing}}
+
+\begin{document}
+	
+	\medskip                        % Skip a "medium" amount of space
+	% (latex determines what medium is)
+	% Also try: \bigskip, \littleskip
+	
+	\thispagestyle{plain}
+	\begin{center}                  % Center the following lines
+		{\Large Practical Trigger-Action Programming in the Smart Home
+} \\
+		\myname \\
+		\myandrew @andrew.cmu.edu\\
+	\end{center}
+	
+	\question{1}{Summary}
+	\quad This paper provides the foundation for further research. In fact it doesn't deploy anything in the space, rather is the proof of concept that the space of "trigger programmable homes" could have pervasive success.
+	
+	\quad First they introduce the inspiration for the project. As researchers many times we can live in this bubble where everyone is technically adept, knows how to operate the technology we were with each and every day. If we start building technologies like smart homes etc. we need to understand that the average and worse than average tech people need to be able to use the systems to their full potentials. That's what this paper looks to instil and show
+	
+	\quad The first study they ran involved on what behaviors users would want in their smart homes. This was done on Amazon MTurk workers. They were told to imagine if they had a fully smart home. What kind of things would they want it to do, what kind of direction would they give it. Interestingly they primed a subset of the dataset with example instructions to give them a "template". Over half the behaviors fit the trigger action programming.
+	
+	\quad Trigger action programming is defined by a trigger event and an action.
+	
+	\quad Next they studied IFTTT to see what kind of trigger actions they could implement. They scraped all the data and analyzed what kind of thing
+	
+	\quad The final study was testing the success of random users being able to program actions to see how effective trigger action program is in allowing users to get what they want done.
+	
+	\question{2}{Strengths}
+	\begin{itemize}
+		\item Expanding userbase to non-techy users
+	\end{itemize}
+	\question{3}{Weaknesses}
+	\begin{itemize}
+		\item NLP is hard and a not strict language is hard to work with
+	\end{itemize}
+	\question{4}{Future Directions}
+	\begin{itemize}
+		\item Applying trigger action to other fields (the way IFTTT is)
+	\end{itemize}
+
+\end{document}
+
+

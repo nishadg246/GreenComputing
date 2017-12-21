@@ -1,0 +1,73 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+	\noindent{\bf #1: #2} \vspace{0.5em}
+	\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Nishad Gothoskar}
+\newcommand{\myandrew}{ngothosk}
+\newcommand{\myhwnum}{2}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{Green Computing}}
+
+\begin{document}
+	
+	\medskip                        % Skip a "medium" amount of space
+	% (latex determines what medium is)
+	% Also try: \bigskip, \littleskip
+	
+	\thispagestyle{plain}
+	\begin{center}                  % Center the following lines
+		{\Large Power Provisioning for a Warehouse-sized Computer} \\
+		\myname \\
+		\myandrew @andrew.cmu.edu\\
+	\end{center}
+	
+	\question{1}{Summary}
+	\quad This paper is a survey of power usage in large collections of servers, in the thousands, and using the observations to look for opportunities to efficiently use the energy delivered to the datacenter. The group that pursued this research was based out of Google. They have access to large datacenters like the one they are interested. I have found online that Google publishes data about their power usage and their datacenters every quarter/year.
+	
+	\quad The paper identifies some key findings. (1) Gap between usage and peak is high (2) Capping is useful to prevent overloading (3) Some of these techniques are better at large scales (3) DVFS can help reduce peak power consumption (4) Power efficiency across activity range is important
+	
+	\quad They also made clear some sources of inefficiency. (1) Datacenter is usually not assemble at one time (2) Fragmentation not enough power to ad another server but still alot left (3) Label is not true usage (4) Variable workloads (5) Large groups arent all at peak activity at same time (6) Other side costs like cooling, etc
+	
+	\quad Next, the paper discussed the power distribution structure of a datacenter and how there are various levels with different types of power management at each level (high level vs. low level).various contracts must be enforced to ensure breakers aren't blown and the power budget is being satisfied. At the lower levels, they show that what devices are marketed to use are usually extrememly overestimated and in fact do not use that much power. That combined with our own underestimation yields a large gap.
+	
+	\quad They then tested power consumption with respect to 3 different workloads each with different features. Websearch - high throughput and large data processing, Webmail - disk intensive fewere requests, Mapreduce - cluster and shared.
+	
+	\quad They also tested other methods like DVFS and improving non-peak power efficiency
+	\question{2}{Strengths}
+	\begin{itemize}
+		\item Each of the workloads put stresses on the server architecture in different ways (different categories)
+		\item Tested a space which really hasn't been tested before (data centers and large-scale systems)
+		\item Thorough in looking at various aspects of power consumption in the datacenter, not just the devices themselves
+	\end{itemize}
+	\question{3}{Weaknesses}
+	\begin{itemize}
+		\item Just analysis no special implementations to show that there are guaranteeed improvements (strategies)
+	\end{itemize}
+	\question{4}{Future Directions}
+	\begin{itemize}
+		\item Write power efficient "manager" for distributed system
+		\item Deploy more energy efficient system (not really doable for most researchers but maybe Google)
+	\end{itemize}
+
+\end{document}
+
+

@@ -1,0 +1,76 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+	\noindent{\bf #1: #2} \vspace{0.5em}
+	\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Nishad Gothoskar}
+\newcommand{\myandrew}{ngothosk}
+\newcommand{\myhwnum}{2}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{Green Computing}}
+
+\begin{document}
+	
+	\medskip                        % Skip a "medium" amount of space
+	% (latex determines what medium is)
+	% Also try: \bigskip, \littleskip
+	
+	\thispagestyle{plain}
+	\begin{center}                  % Center the following lines
+		{\Large The Smart Thermostat: Using Occupancy Sensors to Save Energy in Homes
+} \\
+		\myname \\
+		\myandrew @andrew.cmu.edu\\
+	\end{center}
+	
+	\question{1}{Summary}
+	\quad This paper begins like most other in this field of smart homes, energy efficient homes, etc. HVAC is the number one consumer of residential electricity. Using simple and cheap sensors to detect occupancy and usage patterns (including sleep). We can autonomously control and regulate HVAC to save energy and therefore money. They claim that they can reduce 28 percent energy on average for a startup cost of sensors of only 25 dollars. The commercial baseline is only 7 percent.
+	
+	\quad The main goals here are to be able to reliably know when a user has left/entered the home. And also, when they have slept and woken up. Learning these routines will allow the system to properly turn off and turn on the HVAC (not too late or too early to minimize waste)
+	
+	\quad HVAC has different stages with different "power" but also proportionally more expensive. Stage 2 is efficient but slow. Stage 3 is fast but costly. Stage 1 is more for maintaining temperature. 
+	
+	\quad The problem with current reactive technology is sometimes its not good enough and actually causes wastage instead because it doesn't prepare when necessary and shuts of too late. Their implementation uses probabilistic models to estimate occupancy and preheat/ adjust accordingly.
+	
+	\quad How they do this is using switches on entrances and PIR motion sensors. Then using previously done research, the optimum preheating time is 18:06. A state machine governs what state the system is in and when to change from active to idle and vice versa given the time since last fire.
+	
+	\quad The other model is a HMM to predict away, active, sleep. We just covered HMM in 10601.
+	
+	\quad The HMM had 88 percent accuracy compared to the react5's 78 percent accuracy.
+	
+	\quad While the small scale effects are minimal, in the grand scale it has the potential to save alot of money and be green.
+	
+	\question{2}{Strengths}
+	\begin{itemize}
+		\item Probabilistic models
+	\end{itemize}
+	\question{3}{Weaknesses}
+	\begin{itemize}
+		\item HMM isn't fully accurate until you get alot of data. I experienced this in machine learning.
+	\end{itemize}
+	\question{4}{Future Directions}
+	\begin{itemize}
+		\item Incorporate your phone to know when you're away from home, when you're coming home etc. More thorough learning of your routine.
+	\end{itemize}
+
+\end{document}
+
+

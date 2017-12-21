@@ -1,0 +1,73 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+	\noindent{\bf #1: #2} \vspace{0.5em}
+	\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Nishad Gothoskar}
+\newcommand{\myandrew}{ngothosk}
+\newcommand{\myhwnum}{2}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{Green Computing}}
+
+\begin{document}
+	
+	\medskip                        % Skip a "medium" amount of space
+	% (latex determines what medium is)
+	% Also try: \bigskip, \littleskip
+	
+	\thispagestyle{plain}
+	\begin{center}                  % Center the following lines
+		{\Large ViridiScope: Design and Implementation of a Fine Grained Power Monitoring System for Homes
+} \\
+		\myname \\
+		\myandrew @andrew.cmu.edu\\
+	\end{center}
+	
+	\question{1}{Summary}
+	\quad The paper looks at dealing with the problem of energy monitoring. Essentially, analyzing course grained measurements to try and give fine-grained measurements. Their key goals are giving comprehensive coverage (monitoring all energy consumption),  fine-grained measurements (appliance/device level predictions), and easy-of-use.
+	
+	\quad Many people have done work on analyzing the end power (main power line) and trying to differentiate devices by using FFT and other signal techniques. But what this paper attempts is using indirect sensing. Sensors besides energy meters to try and predict when devices are on. Examples include magnetic sensors, acoustic sensors, light intensity sensors, etc. Magnetic sensors can sense changes in power wires. Acoustic sensors can sense on states of devices that make noise when they are on like refrigerators. Light intensity sensors can sense when lights turn on.
+	
+	\quad Then there is the process of predicting energy consumption using this variety of sensors so we can predict the device level consumption. They use a series of calibrated model functions to do this prediction. This model takes into account the various power states of each device.
+	
+	\quad They tested their system of a 2-person apartment which has course-grained instrumentation. The devices were a PC, refrigerator, and a table lamp. The magnetometer was on each power cord. Their results show quite small errors between the estimated and true energy consumptions. Even when they upped the number of devices, their estimations were still quite correct.
+	
+	\quad This project extends the idea of NILM, non-intrusive load monitoring. The conclusions are that we can get (with calibrated)
+	\question{2}{Strengths}
+	\begin{itemize}
+		\item One plug, some sensors
+		\item Easy install
+		\item appliance level monitoring without appliance level instrumentation
+	\end{itemize}
+	\question{3}{Weaknesses}
+	\begin{itemize}
+		\item Need more sensors maybe
+		\item Dedicated PC needed
+	\end{itemize}
+	\question{4}{Future Directions}
+	\begin{itemize}
+		\item Use a Rasberry Pi
+		\item Provide control of the devices
+	\end{itemize}
+
+\end{document}
+
+

@@ -1,0 +1,69 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+	\noindent{\bf #1: #2} \vspace{0.5em}
+	\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Nishad Gothoskar}
+\newcommand{\myandrew}{ngothosk}
+\newcommand{\myhwnum}{2}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{Green Computing}}
+
+\begin{document}
+	
+	\medskip                        % Skip a "medium" amount of space
+	% (latex determines what medium is)
+	% Also try: \bigskip, \littleskip
+	
+	\thispagestyle{plain}
+	\begin{center}                  % Center the following lines
+		{\Large Private Memoirs of a Smart Meter
+} \\
+		\myname \\
+		\myandrew @andrew.cmu.edu\\
+	\end{center}
+	
+	\question{1}{Summary}
+	\quad Privacy is an important but sometimes ignored factor of the entire "smart" future. Specifically, wide spread deployment of smart energy sensors has the ability to give a lot of insight into what's going on in the home. This paper is showing what kinds of privacy invasive things can be extracted from this data. This provides proof of the actual inspiration and then they go on to describe what ways they can protect against this.
+	
+	\quad The information leaks are dependent on the granularity of power measurements. Older meters only read once in a while, but our newer meters can get real-time measurements down to seconds. From this, newer generations of NILM algorithms can actually differentiate exact device usage patterns.
+	
+	\quad So what exactly are the privacy concerns of smart meters. Well they discuss some of the questions that could be answered by smart metering. Like were you home during sick leave? Did you leave late for work? While these might not seem extremely intrusive. A wide variety of these questions answered might together be intrusive. They just look for a simple patterns in our total and device usage to answer these questions and many times that is enough.
+	
+	\quad So the process the took was to label and tag power events. Then filter out automated appliances to leave just user initiated event changes. Finally map events to real life. Now you have a time series of all the events that were initiated by users. And then you can begin to develop a sense of routine. They use a density based clustering algorithm to do this mapping to real life.
+	
+	\quad Now they talking about privacy-enhancing architecture. The techniques they use include obfuscating the names, randomization, etc. In particular zero knowledge protocols would allow data transmission with anonymity.
+	\question{2}{Strengths}
+	\begin{itemize}
+		\item Focus on privacy and proof that it is really an issue. Very thorough
+	\end{itemize}
+	\question{3}{Weaknesses}
+	\begin{itemize}
+		\item Transmission of data section could be better
+	\end{itemize}
+	\question{4}{Future Directions}
+	\begin{itemize}
+		\item Implementation of new version to see if you can still disambiguate
+	\end{itemize}
+
+\end{document}
+
+

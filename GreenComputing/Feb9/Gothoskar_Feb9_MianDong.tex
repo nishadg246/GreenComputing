@@ -1,0 +1,69 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+	\noindent{\bf #1: #2} \vspace{0.5em}
+	\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Nishad Gothoskar}
+\newcommand{\myandrew}{ngothosk}
+\newcommand{\myhwnum}{2}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{Green Computing}}
+
+\begin{document}
+	
+	\medskip                        % Skip a "medium" amount of space
+	% (latex determines what medium is)
+	% Also try: \bigskip, \littleskip
+	
+	\thispagestyle{plain}
+	\begin{center}                  % Center the following lines
+		{\Large Chameleon: A Color-Adaptive Web Browser for Mobile OLED Displays} \\
+		\myname \\
+		\myandrew @andrew.cmu.edu\\
+	\end{center}
+	
+	\question{1}{Summary}
+	\quad Displays are a valued component of a mobile device to users. Crisp, clean displays like Apple's Retina Displays and other's HD Panels are a selling point to consumers. But what many don't understand, until they visit their power/process managers, is that they are a HUGE energy consumer in your device. But a new technology is catching on called Organic Light-Emitting Diode Displays (OLED). Measurements show that these displays perfect quite energy efficiently when displaying darker content but not so much when displaying bright content. Chameleon attempts to provide a solution by dynamically adjusting content to its most energy-efficient display parameters. This involves dynamically adjusting colors displayed. The challenge is that you don't want to damage the user interaction experience of a web browing experience by making it hard to read or "ugly"
+	
+	\quad To do this Chameleon creates a model for how much power is consumed by the display and it does this quite accurately by finding how many pixels are displaying each color and that way it can be quite exact. The research first conducted studies on web usage of users and it shows that Chameleon does solve a rampant energy problem.
+	
+	\quad So Chameleon then makes modifications to the HTML/CSS when it's response is read from the server. There are various modes including Dark, Inversion, and Arbitrary which just chooses the most power efficient colors. The problem is it needs to do all this computation and modification and then rerender the elements with minimal latency and overhead.
+	\question{2}{Strengths}
+	\begin{itemize}
+		\item All the papers we have read deal with changing things about the app to save power. But if most of the power usage is in the display then we should be working on how to chang ehow the display is used
+		\item People are willing to deal with color changes (flux) so its a good thing to sacrifice for extra battery life
+		\item Don't change the quality
+		\item Actually did field trials
+	\end{itemize}
+	\question{3}{Weaknesses}
+	\begin{itemize}
+		\item People don't really like seeing things change
+		\item But if its their first time it won't have any effect.
+	\end{itemize}
+	\question{4}{Future Directions}
+	\begin{itemize}
+		\item Videos and UI changes to optimize energy efficiency
+		\item Give this tool to developers so that they will change the way they make color choice decisions and design their UIs
+	\end{itemize}
+
+\end{document}
+
+

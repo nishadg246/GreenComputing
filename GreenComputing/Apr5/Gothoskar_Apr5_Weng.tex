@@ -1,0 +1,73 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+	\noindent{\bf #1: #2} \vspace{0.5em}
+	\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Nishad Gothoskar}
+\newcommand{\myandrew}{ngothosk}
+\newcommand{\myhwnum}{2}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{Green Computing}}
+
+\begin{document}
+	
+	\medskip                        % Skip a "medium" amount of space
+	% (latex determines what medium is)
+	% Also try: \bigskip, \littleskip
+	
+	\thispagestyle{plain}
+	\begin{center}                  % Center the following lines
+		{\Large Disaggregated
+End-Use Energy Sensing for the Smart Grid
+} \\
+		\myname \\
+		\myandrew @andrew.cmu.edu\\
+	\end{center}
+	
+	\question{1}{Summary}
+	\quad This paper is a second version of a system called BuildingDepot. BuildingDepot addresses the need for improving energy efficiency in buildings.The methods of doing so are taking advantage of sensor network deployments and making sense of the large amounts of data they collect. BuildingDepot is a building management control platform for data anlysis and high level supervisory control.
+	
+	\quad BuildingDepot 2.0 involves a template system for a common language of describing sensors and buildings. Its architecture is such that it can abstract to any building type. The abstraction involves n institution that manages a building or buildings, whether that be a group or an individual. The second class of users consist of analysis and auditors that want access to the data (past and current). Finally, there is the group of application writes that can write applications that are usable by any BuildingDepot 2.0 system.
+	
+	\quad The architecture consists of two main components. The DataService and the CentralService. The DS stores data and the CS is the directory for the institutions users. An optional component is the ApplicationService. A system will have once CS and then an arbitrary number of DS and AS.
+	
+	\quad The DS consists of Sensor Groups where each sensor ascribes to a strict Sensor Template that provide us with data labelled Sensor points. Now they have a clever feature where you can combine the data from various sensors to create another metric and label it a virtual sensor. The data service is secured with permissions based on whether a user is an administrative user or a normal user.
+	
+	\quad The CS consists of the building template. Essentially a description of the building features. Levels, zones, rooms, etc. And as I said, there BD has exactly one CS and all the DataServices are bound to this one CS and the CS can retrieve the data it wants from the DSes
+	
+	\quad The AS allows developers to write apps on top of the existing BD services. It is exposed either through the AppServer or the REST API. Example applications include Wifi occupancy sensors.
+	\question{2}{Strengths}
+	\begin{itemize}
+		\item High level of abstraction so anyone can use
+		\item Apps allow for others to expand on existing work without starting over
+	\end{itemize}
+	\question{3}{Weaknesses}
+	\begin{itemize}
+		\item Little description of the implementation (small section)
+	\end{itemize}
+	\question{4}{Future Directions}
+	\begin{itemize}
+		\item Home management system
+	\end{itemize}
+
+\end{document}
+
+

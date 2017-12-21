@@ -1,0 +1,70 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+
+\oddsidemargin0cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+	\noindent{\bf #1: #2} \vspace{0.5em}
+	\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Nishad Gothoskar}
+\newcommand{\myandrew}{ngothosk}
+\newcommand{\myhwnum}{2}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{Green Computing}}
+
+\begin{document}
+	
+	\medskip                        % Skip a "medium" amount of space
+	% (latex determines what medium is)
+	% Also try: \bigskip, \littleskip
+	
+	\thispagestyle{plain}
+	\begin{center}                  % Center the following lines
+		{\Large Sentinel: Occupancy Based HVAC Actuation using Existing WiFi Infrastructure within Commercial Buildings
+} \\
+		\myname \\
+		\myandrew @andrew.cmu.edu\\
+	\end{center}
+	
+	\question{1}{Summary}
+	\quad The paper first argues why the problem they are targeting is actually a significant one. HVAC energy consumption accounts for 40\% of commercial building energy usage. And, commercial energy consuption accounts of for 20\% of total energy consumption. So this a significant slice of the pie they are targeting. They then go on to give a bit of background about the CSE campus at UCSD and then about HVAC systems and the managements systems that are already in place to control them.
+	
+	\quad The core of the problem is that there is HVAC wastage. In that, areas that don't need to be heated/cooled are being, and that the entire system is being used during times when occupancy is low or nonexistent.
+	
+	\quad It looks like a main factor is that they didn't want to change existing infrastructure and rather take advantage of what was already in place but use it more intelligently and make more intelligent decisions of the HVAC systems usage.
+	
+	\quad They focussed mostly on WiFi sensing. Most commercial buildings have access points to distribute Internet connection. And if the building admin registers the locations of these access points, we can see the traffic on each of these access points and have a good idea of how the population is distributed in the building. There is a zoning system and categorization of these zones into personal and shared space.
+	
+	\quad But obviously we can't just depend on wifi, so there is a backdoor for the system. The system is built on top of existing smart building technology like Bulding Depot. How wifi data is collected is by monitoring packets.
+	\question{2}{Strengths}
+	\begin{itemize}
+		\item Can only improve the system. Since there is a backdoor
+		\item Leveraging existing infrastructure
+	\end{itemize}
+	\question{3}{Weaknesses}
+	\begin{itemize}
+		\item Wifi can be kind of inaccurate compared to occupancy sensors  -> 94\% accuracy
+	\end{itemize}
+	\question{4}{Future Directions}
+	\begin{itemize}
+		\item Expand to more large scale control of more of the building's infrastructure
+	\end{itemize}
+
+\end{document}
+
+
